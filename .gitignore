@@ -7,7 +7,7 @@
 /retink_data
 
 # production
-/pckg
+/pkg
 
 # misc
 .DS_Store
