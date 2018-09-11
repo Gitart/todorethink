@@ -1,0 +1,99 @@
+#!/bin/bash
+
+clear
+echo "Старт программы"
+echo "Старт сервиса"
+echo
+
+# Установки среды
+##export GOPATH=$HOME/barsetka
+
+export GOPATH=$PWD
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+
+# *****************************************************
+# Library for go 
+# *****************************************************
+# go get -v github.com/sqs/goreturns
+# go get -u -v github.com/sqs/goreturns
+# go get -u -v github.com/ramya-rao-a/go-outline
+# go get -u -v golang.org/x/tools/cmd/gorename
+# go get -u -v github.com/golang/lint/golint
+# go get -u -v github.com/derekparker/delve/cmd/dlv
+# go get -u -v github.com/rogpeppe/godef
+# go get golang.org/x/net/html
+# go get -u -v github.com/mattn/go-isatty
+# go get -u -v github.com/sirupsen/logrus
+# go build -i -o /tmp/go-code-chec
+# go get -u -v github.com/uudashr/gopkgs/cmd/gopkgs
+# go get -u -v github.com/mdempsky/gocode/internal
+
+
+echo Download Library Ethereum
+echo Start dowunload Ethereum
+## go get -d github.com/ethereum/go-ethereum
+echo Finish
+
+
+
+
+# Установка автодополнения  для ГО  https://github.com/mdempsky/gocode
+
+# Setup
+# You should have a correctly installed Go compiler environment and your personal workspace ($GOPATH). If you have no idea what $GOPATH is, take a look here. Please make sure that your $GOPATH/bin is available in your $PATH. This is important, because most editors assume that gocode binary is available in one of the directories, specified by your $PATH environment variable. Otherwise manually copy the gocode binary from $GOPATH/bin to a location which is part of your $PATH after getting it in step 2.
+# Do these steps only if you understand why you need to do them:
+# export GOPATH=$HOME/goprojects
+# export PATH=$PATH:$GOPATH/bin
+
+# Then you need to install gocode:
+# go get -u github.com/mdempsky/gocode (-u flag for "update")
+
+# Windows users should consider doing this instead:
+# go get -u -ldflags -H=windowsgui github.com/mdempsky/gocode
+
+# That way on the Windows OS gocode will be built as a GUI application and doing so solves hanging window issues with some of the editors.
+# Next steps are editor specific. See below.
+# 
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# ********************************************************
+# go get -u github.com/mdempsky/gocode
+# go get -u -ldflags -H=windowsgui github.com/mdempsky/gocode
+
+# Markdown
+# go get -u github.com/russross/blackfriday
+# Все библиотеки потом сбросить в директорию с GO
+
+# Start
+# go build -i -o /tmp/go-code-check
+go build -o mon
+./mon
+
+
+# Create directory
+## mkdir  ESS
+## git clone https://github.com/ethereum/go-ethereum.git ESS
+#cd go-ethereum
+##cd ESS
+###make geth
+
+
+# Create directory
+#mkdir Hybrid
+#git clone https://github.com/ovcharovvladimir/essentiaHybrid Hybrid
+#cd Hybrid
+
+
+# Create directory
+echo start copy project Prysm
+dir=Prysm
+#mkdir $dir
+#git clone https://github.com/ovcharovvladimir/$dir $dir
+git clone https://github.com/ovcharovvladimir/Prysm $dir
+#cd $dir
+
+
+
+
+
+
