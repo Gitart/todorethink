@@ -30,6 +30,16 @@ export PATH=$PATH:$GOROOT/bin
 # go get -u -v github.com/mdempsky/gocode/internal
 
 
+
+
+#--------------------------------------------------------------
+# Todo library
+#--------------------------------------------------------------
+# go get -u -v github.com/dancannon/gorethink
+# go get -u -v github.com/gorilla/mux
+# go get -u -v github.com/gorilla/websocket
+
+
 echo Download Library Ethereum
 echo Start dowunload Ethereum
 ## go get -d github.com/ethereum/go-ethereum
@@ -66,8 +76,8 @@ echo Finish
 
 # Start
 # go build -i -o /tmp/go-code-check
-go build -o mon
-./mon
+go build -o todo
+./todo
 
 
 # Create directory
@@ -89,7 +99,7 @@ echo start copy project Prysm
 dir=Prysm
 #mkdir $dir
 #git clone https://github.com/ovcharovvladimir/$dir $dir
-git clone https://github.com/ovcharovvladimir/Prysm $dir
+## git clone https://github.com/ovcharovvladimir/Prysm $dir
 #cd $dir
 
 

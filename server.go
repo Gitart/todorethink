@@ -13,32 +13,32 @@ var (
 	session *r.Session
 )
 
+
+
 func init() {
 	var err error
 
-	session, err = r.Connect(r.ConnectOpts{
-		Address:  "localhost:28015",
-		Database: "todo",
-		MaxOpen:  40,
-	})
+	session, err = r.Connect(r.ConnectOpts{Address:  "localhost:28015",	Database: "todo", MaxOpen:40})
 
 	if err != nil {
 	   log.Fatalln(err.Error())
 	}
 }
 
+
 func NewServer(addr string) *http.Server {
 	// Setup router
 	router = initRouting()
 
 	// Create and start server
-	return &http.Server{Addr:    addr,	Handler: router}
+	return &http.Server{Addr: addr,	Handler: router}
 }
 
 
 func StartServer(server *http.Server) {
-	log.Println("Starting server")
-	err := server.ListenAndServe()
+	 log.Println("Starting server")
+
+	 err := server.ListenAndServe()
 
 	if err != nil {
 		log.Fatalln("Error: %v", err)
@@ -77,7 +77,6 @@ func newChangesHandler(fn func(chan interface{})) http.HandlerFunc {
 }
 
 // Handlers
-
 func indexHandler(w http.ResponseWriter, req *http.Request) {
 	items := []TodoItem{}
 

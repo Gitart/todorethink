@@ -1,27 +1,25 @@
 package main
 
+
 type hub struct {
-	// Registered connections.
-	connections map[*connection]bool
-
-	// Inbound messages from the connections.
-	broadcast chan interface{}
-
-	// Register requests from the connections.
-	register chan *connection
-
-	// Unregister requests from connections.
-	unregister chan *connection
+	connections map[*connection]bool            // Registered connections.
+	broadcast   chan interface{}                // Inbound messages from the connections. 
+	register    chan *connection                // Register requests from the connections. 
+	unregister  chan *connection	            // Unregister requests from connections.
 }
+
+
+
 
 func newHub() hub {
 	return hub{
-		broadcast:   make(chan interface{}),
-		register:    make(chan *connection),
-		unregister:  make(chan *connection),
-		connections: make(map[*connection]bool),
-	}
+	        	broadcast:   make(chan interface{}),
+		        register:    make(chan *connection),
+		        unregister:  make(chan *connection),
+		        connections: make(map[*connection]bool),
+	          }
 }
+
 
 
 func (h *hub) run() {

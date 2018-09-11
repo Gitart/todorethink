@@ -43,6 +43,7 @@ func (c *connection) writer() {
 
 var upgrader = &websocket.Upgrader{ReadBufferSize: 1024, WriteBufferSize: 1024}
 
+
 func wsHandler(h hub) http.HandlerFunc {
 	 log.Println("Starting websocket server")
 	
@@ -55,7 +56,10 @@ func wsHandler(h hub) http.HandlerFunc {
 
 		c := &connection{send: make(chan interface{}, 256), ws: ws}
 		h.register <- c
-		defer func() { h.unregister <- c }()
+		
+		defer func() { 
+			h.unregister <- c 
+		}()
 
 		go c.writer()
 		   c.reader()

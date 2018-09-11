@@ -12,9 +12,9 @@ type TodoItem struct {
 }
 
 func (t *TodoItem) Completed() bool {
-	return t.Status == "complete"
+	  return t.Status == "complete"
 }
 
 func NewTodoItem(text string) *TodoItem {
-	return &TodoItem{Text:text,Status: "active"}
+	 return &TodoItem{Text:text,Status: "active"}
 }
